@@ -1,6 +1,8 @@
 # AMD Ryzen Hackintosh - Opencore EFI for Asus TUF Gaming B550M-Plus (WI-FI)
 
-![](1.png) ![](2.png)
+![](1.png)
+
+![](2.png)
 
 ## Specification
 | **Component** | **Model** |
@@ -9,14 +11,14 @@
 | Motherboard | Asus TUF Gaming B550M-Plus (WI-FI) |
 | RAM | 16GB (2 x 8GB) G.Skill RipjawsV @ 3600MHz |
 | Audio Chipset | ALCS-1200A |
-| GPU | Gigabyte RX 570 4GB |
+| GPU | Gigabyte RX 5600 XT 6GB |
 | Ethernet | RTL8125 2.5GbE |
 | WiFi & Bluetooth | Intel WiFi 6 AX200 |
 | OS Disk (Sata3) | Toshiba TR200 240GB |
 
 **macOS version**: 10.15.7 (19H2)  
 
-**OpenCore version**: 0.6.1  
+**OpenCore version**: 0.6.2  
 
 **SMBIOS**:  iMacPro1,1
 
@@ -39,11 +41,15 @@
  - [Kext] USBPorts
 
 ## Working
-- Ethernet - Settings -> Network -> Ethernet -> Advenced -> Hardware: Set Configure from Automatically->Manually Then set Speed to 1000baseT, click ok and apply.
+- **Sleep/Wake**
+	- When plugged the **USB 2.0** devices to **PTXH** ports Sleep and Wake working well. - [See Details] (https://amd-osx.com/forum/viewtopic.php?f=61&t=9294&sid=3376942691af2389efe6fcc99307fdba)
+	
+- Ethernet 
+	- Settings -> Network -> Ethernet -> Advenced -> Hardware: Set Configure from Automatically->Manually Then set Speed to 1000baseT, click ok and apply.
 
-	-- When firts install, you can set via terminal:
+	- When firts install, you can set via terminal:
 
-	`ifconfig en0 media 1000baseT`
+		`ifconfig en0 media 1000baseT`
 
 	![](ethernet.png)
 
@@ -56,7 +62,7 @@
 
 
 ## Not working
- - **Sleep/Wake**
+ - Mic > [See Details] (https://dortania.github.io/OpenCore-Post-Install/universal/audio.html#no-mic-on-amd) (Can be used USB Mics)
  - AirDrop (Not yet)
  - Hypervisor.framework (VirtualBox and XCode iOS emulator works)
  - Android Studio emulator (Can be replaced with Genymotion)
